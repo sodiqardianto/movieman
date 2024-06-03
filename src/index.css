@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    :root {
+        --black3: #020c1b;
+        --blueNew: #3985F5;
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -15,4 +22,24 @@
 .lazy-load-image-background {
     width: 100%;
     height: 100%;
+}
+
+@layer components {
+    .top {
+        background: rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(3.5px);
+        -webkit-backdrop-filter: blur(3.5px);
+    }
+
+    .show {
+        background-color: var(--black3);
+    }
+    
+    .hide {
+        @apply -translate-y-16;
+    }
+
+    .searchIcon {
+        @apply mr-0;
+    }
 }
