@@ -36,7 +36,46 @@ export default {
           "100%": { transform: "translateY(0)" },
         },
       },
+      transitionProperty: {
+        leftMove: "left cubic-bezier(0.88, -0.35, 0.565, 1.35) 0.4s",
+      },
+      ellipsis: {
+        1: {
+          display: "-webkit-box",
+          "-webkit-line-clamp": "1",
+          "-webkit-box-orient": "vertical",
+          overflow: "hidden",
+          "text-overflow": "ellipsis",
+        },
+        2: {
+          display: "-webkit-box",
+          "-webkit-line-clamp": "2",
+          "-webkit-box-orient": "vertical",
+          overflow: "hidden",
+          "text-overflow": "ellipsis",
+        },
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      const newUtilities = {
+        ".ellipsis-1": {
+          display: "-webkit-box",
+          "-webkit-line-clamp": "1",
+          "-webkit-box-orient": "vertical",
+          overflow: "hidden",
+          "text-overflow": "ellipsis",
+        },
+        ".ellipsis-2": {
+          display: "-webkit-box",
+          "-webkit-line-clamp": "2",
+          "-webkit-box-orient": "vertical",
+          overflow: "hidden",
+          "text-overflow": "ellipsis",
+        },
+      };
+      addUtilities(newUtilities, ["responsive", "hover"]);
+    },
+  ],
 };

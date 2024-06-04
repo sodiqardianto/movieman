@@ -1,0 +1,10 @@
+.CircularProgressbar
+.CircularProgressbar-text {
+    font-size: 34px;
+    font-weight: 700;
+    fill: var(--black3);
+}
+.CircularProgressbar
+.CircularProgressbar-trail {
+    stroke: transparent;
+}

@@ -5,7 +5,7 @@ import useFetch from '../../../hooks/useFetch';
 import { useSelector } from 'react-redux';
 import Img from '../../../components/lazyLoadImage/Img';
 import ContentWrapper from '../../../components/contentWrapper/ContentWrapper';
-
+import "./hero-banner.css";
 const HeroBanner = () => {
   const [background, setBackground] = useState("");
   const [query, setQuery] = useState("");
@@ -38,7 +38,7 @@ const HeroBanner = () => {
       <ContentWrapper>
         <div className="flex flex-col items-center text-white text-center relative max-w-[800px] mx-auto">
           <span className="text-5xl font-bold mb-3 md:mb-0 md:text-8xl">Welcome.</span>
-          <span className="text-xs font-medium mb-10 md:text-base">Millions of movies, TV shows and people to discover. Explore now.</span>
+          <span className="lg:text-lg font-medium mb-10 md:text-base">Millions of movies, TV shows and people to discover. Explore now.</span>
           <div className="flex items-center w-full">
             <input
             type="text"
