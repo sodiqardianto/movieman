@@ -20,7 +20,17 @@ const Carousel = ({ data, loading }) => {
     const navigate = useNavigate();
 
     const navigation = (dir) => {
+        const container = carouselContainer.current;
 
+        const scrollAmount =
+        dir === "left"
+        ? container.scrollLeft - (container.offsetWidth + 20)
+        : container.scrollLeft + (container.offsetWidth + 20) 
+
+        container.scrollTo({
+            left: scrollAmount,
+            behavior: "smooth"
+        })
     }
 
     const skeletonItem = () => {
@@ -48,7 +58,7 @@ const Carousel = ({ data, loading }) => {
                     onClick={() => navigation("right")}
                 />
                 {!loading ? (
-                    <div className="flex gap-[10px] overflow-y-hidden -mr-5 -ml-5 px-5 md:gap-5 md:overflow-hidden md:m-0 md:p-0">
+                    <div className="flex gap-[10px] overflow-y-hidden -mr-5 -ml-5 px-5 md:gap-5 md:overflow-hidden md:m-0 md:p-0" ref={carouselContainer}>
                         {data?.map((item) => {
                             const posterUrl = item?.poster_path ? url.poster + item?.poster_path : PosterFallBack
                             return (
