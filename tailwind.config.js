@@ -18,6 +18,10 @@ export default {
         "2xl": "1536px",
         // => @media (min-width: 1536px) { ... }
       },
+      backgroundImage: {
+        "opacity-layer":
+          "linear-gradient(180deg, rgba(4, 21, 45, 0) 0%, #041123 79.17%)",
+      },
       colors: {
         blackOne: "#04152D",
         blackTwo: "#041226",

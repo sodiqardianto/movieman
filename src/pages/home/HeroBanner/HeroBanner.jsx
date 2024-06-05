@@ -5,7 +5,7 @@ import useFetch from '../../../hooks/useFetch';
 import { useSelector } from 'react-redux';
 import Img from '../../../components/lazyLoadImage/Img';
 import ContentWrapper from '../../../components/contentWrapper/ContentWrapper';
-import "./hero-banner.css";
+
 const HeroBanner = () => {
   const [background, setBackground] = useState("");
   const [query, setQuery] = useState("");
@@ -30,7 +30,11 @@ const HeroBanner = () => {
     <div className="w-full h-[450px] bg-blackOne flex items-center relative md:h-[700px]">
       {!loading &&
       <div className="w-full h-full absolute top-0 left-0 opacity-50 overflow-hidden">
-        <Img src={background} className="w-full h-full object-cover object-center" />
+        <Img
+          src={background}
+          className="w-full h-full object-cover object-center"
+          wrapperClassName="w-full h-full"
+        />
       </div>
       }
 

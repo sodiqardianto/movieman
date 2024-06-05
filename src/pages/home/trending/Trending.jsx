@@ -8,18 +8,24 @@ const Trending = () => {
     const [endPoint, setEndPoint] = useState("day");
 
     const { data, loading } = useFetch(`/trending/movie/${endPoint}`);
-    
+
     const onTabChange = (tab) => {
         setEndPoint(tab === "Day" ? "day" : "week");
     }
-    
+
     return (
         <div className="relative mb-16">
             <ContentWrapper className="flex items-center justify-between mb-5">
                 <span className="font-normal text-2xl text-white">Trending</span>
-                <SwitchTabs data={["Day", "Week"]} onTabChange={onTabChange} />
+                <SwitchTabs
+                    data={["Day", "Week"]}
+                    onTabChange={onTabChange}
+                />
             </ContentWrapper>
-            <Carousel data={data?.results} loading={loading} />
+            <Carousel
+                data={data?.results}
+                loading={loading}
+            />
         </div>
     )
 }

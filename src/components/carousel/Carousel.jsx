@@ -10,7 +10,6 @@ import Img from '../lazyLoadImage/Img';
 import PosterFallBack from '../../assets/no-poster.png';
 import ContentWrapper from '../contentWrapper/ContentWrapper';
 import CircleRating from '../circleRating/CircleRating';
-import "./carousel.css";
 import Genres from '../genres/Genres';
 
 const Carousel = ({ data, loading, endPoint }) => {
@@ -68,9 +67,20 @@ const Carousel = ({ data, loading, endPoint }) => {
                   onClick={() => navigate(`/${item?.media_type || endPoint}/${item?.id}`)}
                 >
                   <div className="relative w-full aspect-[1/1.5] bg-cover bg-center mb-8 flex items-end justify-between p-[10px]">
-                    <Img src={posterUrl} className="w-full h-full object-cover object-center" />
-                    <CircleRating rating={item?.vote_average.toFixed(1)} className="w-10 h-10 relative top-[30px] bg-white flex-shrink-0 md:w-[50px] md:h-[50px]" />
-                    <Genres data={item?.genre_ids.slice(0, 2)} />
+                    <Img
+                      src={posterUrl}
+                      className="w-full h-full object-cover object-center"
+                      wrapperClassName="absolute top-0 left-0 w-full h-full rounded-xl overflow-hidden"
+                    />
+                    <CircleRating
+                      rating={item?.vote_average.toFixed(1)}
+                      className="w-10 h-10 relative top-[30px] flex-shrink-0 md:w-[50px] md:h-[50px] font-bold"
+                      backgroundColor="white"
+                    />
+                    <Genres
+                      data={item?.genre_ids.slice(0, 2)}
+                      className="hidden"
+                    />
                   </div>
                   <div className="text-white flex flex-col">
                     <span className="font-semibold lg:text-base mb-3 leading-6 ellipsis-1 md:text-sm">
