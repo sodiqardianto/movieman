@@ -12,7 +12,7 @@ import ContentWrapper from '../contentWrapper/ContentWrapper';
 import CircleRating from '../circleRating/CircleRating';
 import Genres from '../genres/Genres';
 
-const Carousel = ({ data, loading, endPoint }) => {
+const Carousel = ({ data, loading, endPoint, title }) => {
   const carouselContainer = useRef();
 
   const { url } = useSelector((state) => state.home);
@@ -46,8 +46,11 @@ const Carousel = ({ data, loading, endPoint }) => {
   }
 
   return (
-    <div className="mb-13">
+    <div className="mb-13 mb-[50px]">
       <ContentWrapper className="relative">
+        {title && (
+          <div className="text-2xl text-white mb-5 font-normal">{title}</div>
+        )}
         <BsArrowLeft
           className="text-4xl bg-gradient-to-r from-cyan-500 to-blue-500 absolute rounded-full p-1 text-white top-[40%] translate-y-[-50%] cursor-pointer opacity-50 z-10 hidden md:block hover:opacity-80 left-8"
           onClick={() => navigation("left")}
