@@ -83,7 +83,10 @@ const DetailsBanner = ({ video, crew }) => {
                                                     setVideoId(video?.key);
                                                 }}
                                             >
-                                                <PlayIcon />
+                                                <PlayIcon
+                                                    width="70px"
+                                                    height="70px"
+                                                />
                                                 <span className="text-base font-medium">
                                                     Watch Trailer
                                                 </span>
