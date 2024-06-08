@@ -48,14 +48,14 @@ const DetailsBanner = ({ video, crew }) => {
                             <ContentWrapper>
                                 <div className="flex relative flex-col gap-[25px] md:gap-[50px] md:flex-row">
                                     <div className="flex-shrink-0">
-                                        {data.poster_path ? (
-                                            <Img src={url.poster + data?.poster_path} className="w-full block rounded-xl md:max-w-[350px]" />
+                                        {data?.poster_path ? (
+                                            <Img src={url?.poster + data?.poster_path} className="w-full block rounded-xl md:max-w-[350px]" />
                                         ) : (
                                             <Img src={PosterFallBack} className="w-full block rounded-xl md:max-w-[350px]" />
                                         )}
                                     </div>
                                     <div className="text-white">
-                                        <div className="text-lg leading-10 md:text-3xl md:leading-[44px]">
+                                        <div className="text-[28px] leading-10 md:text-3xl md:leading-[44px]">
                                             {`${data?.name || data?.title} (
                                             ${dayjs(data?.release_date).format("YYYY")}
                                         )`}
