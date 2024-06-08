@@ -80,4 +80,15 @@
     stroke-dashoffset: 0;
     stroke: #3985f5;
   }
+
+  .row-banner {
+    @apply w-full h-[25px] mb-5 rounded-[50px];
+  }
+
+  .row-banner:nth-child(2) {
+    @apply w-3/4 mb-[50px];
+  }
+  .row-banner:nth-child(5) {
+    @apply w-1/2 mb-[50px];
+  }
 }

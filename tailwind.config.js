@@ -22,6 +22,9 @@ export default {
         "opacity-layer":
           "linear-gradient(180deg, rgba(4, 21, 45, 0) 0%, #041123 79.17%)",
       },
+      backgroundColor: {
+        "black-25": "rgba(0, 0, 0, 0.25)",
+      },
       colors: {
         blackOne: "#04152D",
         blackTwo: "#041226",
@@ -77,6 +80,11 @@ export default {
           "-webkit-box-orient": "vertical",
           overflow: "hidden",
           "text-overflow": "ellipsis",
+        },
+        ".bg-blur-video": {
+          background: "rgba(0, 0, 0, 0.25)",
+          backdropFilter: "blur(3.5px)",
+          WebkitBackdropFilter: "blur(3.5px)",
         },
       };
       addUtilities(newUtilities, ["responsive", "hover"]);
