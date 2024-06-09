@@ -9,7 +9,7 @@ import ContentWrapper from '../../../components/contentWrapper/ContentWrapper';
 const HeroBanner = () => {
   const [background, setBackground] = useState("");
   const [query, setQuery] = useState("");
-  
+
   const navigate = useNavigate();
   const { data, loading } = useFetch("/movie/upcoming");
 
@@ -25,17 +25,17 @@ const HeroBanner = () => {
       navigate(`/search/${query}`);
     }
   };
-  
+
   return (
     <div className="w-full h-[450px] bg-blackOne flex items-center relative md:h-[700px]">
       {!loading &&
-      <div className="w-full h-full absolute top-0 left-0 opacity-50 overflow-hidden">
-        <Img
-          src={background}
-          className="w-full h-full object-cover object-center"
-          wrapperClassName="w-full h-full"
-        />
-      </div>
+        <div className="w-full h-full absolute top-0 left-0 opacity-50 overflow-hidden">
+          <Img
+            src={background}
+            className="w-full h-full object-cover object-center"
+            wrapperClassName="w-full h-full"
+          />
+        </div>
       }
 
       <div className="w-full h-[250px] bg-gradient-to-b from-transparent to-[#04152d] absolute bottom-0 left-0"></div>
@@ -45,11 +45,11 @@ const HeroBanner = () => {
           <span className="lg:text-lg font-medium mb-10 md:text-base">Millions of movies, TV shows and people to discover. Explore now.</span>
           <div className="flex items-center w-full">
             <input
-            type="text"
-            placeholder="Search for a movie or tv show..."
-            onChange={(e) => setQuery(e.target.value)}
-            onKeyUp={searchQueryHandler}
-            className="w-[calc(100%-100px)] h-[50px] bg-white outline-0 rounded-l-3xl px-[15px] text-xs md:w-[calc(100%-150px)] md:h-[60px] md:text-sm md:px-7 text-blackOne"
+              type="text"
+              placeholder="Search for a movie or tv show..."
+              onChange={(e) => setQuery(e.target.value)}
+              onKeyUp={searchQueryHandler}
+              className="w-[calc(100%-100px)] h-[50px] bg-white outline-0 rounded-l-3xl px-[15px] text-xs md:w-[calc(100%-150px)] md:h-[60px] md:text-sm md:px-7 text-blackOne"
             />
             <button className="w-[100px] h-[50px] bg-gradient-to-r from-cyan-500 to-blue-500 text-white outline-0 border-0 rounded-r-3xl text-base cursor-pointer md:w-[150px] md:h-[60px] md:text-lg">Search</button>
           </div>

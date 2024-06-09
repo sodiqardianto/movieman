@@ -13,6 +13,7 @@ const Details = () => {
   const { data: credits, loading: creditsLoading } = useFetch(`/${mediaType}/${id}/credits`);
   const officialVideo = data?.results?.find((result) => result?.name?.includes("Official Trailer"));
   const video = data?.results?.[0];
+  
   return (
     <div>
       <DetailsBanner video={officialVideo || video} crew={credits?.crew} />

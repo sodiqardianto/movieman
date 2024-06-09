@@ -22,11 +22,11 @@ const Cast = ({ data, loading }) => {
                     <div className="flex gap-5 overflow-y-hidden -mr-5 -ml-5 px-5 md:m-0 md:p-0">
                         {data?.map((item) => {
                             let imgUrl = item.profile_path ? url.profile + item.profile_path : AvatarDefault;
-                            
+
                             return (
                                 <div
-                                key={item.id}
-                                className="text-center text-white">
+                                    key={item.id}
+                                    className="text-center text-white">
                                     <div className="w-[125px] h-[125px] rounded-full overflow-hidden mb-[15px] md:w-[175px] md:h-[175px] md:mb-[25px]">
                                         <Img src={imgUrl} />
                                     </div>

@@ -169,7 +169,7 @@ const DetailsBanner = ({ video, crew }) => {
                                         )}
                                     </div>
                                 </div>
-                                
+
                                 <VideoPopup
                                     show={show}
                                     setShow={setShow}
