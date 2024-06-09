@@ -36,11 +36,22 @@ export default {
       },
       animation: {
         animateMobileMenu: "mobileMenu 0.3s ease forwards",
+        dash: "dash 1.5s ease-in-out infinite",
+        rotate: "rotate 2s linear infinite",
       },
       keyframes: {
         mobileMenu: {
           "0%": { transform: "translateY(-130%)" },
           "100%": { transform: "translateY(0)" },
+        },
+        dash: {
+          "0%": { strokeDasharray: "1, 150", strokeDashoffset: "0" },
+          "50%": { strokeDasharray: "90, 150", strokeDashoffset: "-35" },
+          "100%": { strokeDasharray: "90, 150", strokeDashoffset: "-124" },
+        },
+        rotate: {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
         },
       },
       transitionProperty: {
