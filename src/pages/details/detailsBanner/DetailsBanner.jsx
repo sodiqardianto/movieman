@@ -64,7 +64,8 @@ const DetailsBanner = ({ video, crew }) => {
 
                                         <Genres
                                             data={_genres}
-                                            className="mb-6"
+                                            position="justify-start"
+                                            className="bg-blueNew py-[3px] px-[5px] text-[12px] rounded text-white whitespace-nowrap mb-[25px] flex-row flex-wrap justify-start"
                                         />
 
                                         <div className="flex items-center gap-6 mb-6">

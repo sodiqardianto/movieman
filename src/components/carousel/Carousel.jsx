@@ -82,6 +82,7 @@ const Carousel = ({ data, loading, endPoint, title }) => {
                     />
                     <Genres
                       data={item?.genre_ids.slice(0, 2)}
+                      position="justify-end"
                       className="bg-blueNew py-[3px] px-[5px] text-[12px] rounded text-white whitespace-nowrap hidden relative md:flex md:flex-wrap md:justify-end"
                     />
                   </div>
