@@ -4,11 +4,11 @@ import { useSelector } from 'react-redux'
 const Genres = ({ data, className }) => {
     const { genres } = useSelector((state) => state.home);
     return (
-        <div className="flex gap-[5px]">
+        <div className="flex gap-[5px] flex-wrap justify-end">
             {data?.map((genre) => {
                 if (!genres[genre]?.name) return;
                 return (
-                    <div key={genre} className={`bg-blueNew py-[3px] px-[5px] text-[12px] rounded text-white whitespace-nowrap relative md:flex md:flex-wrap md:justify-end ${className}`}>
+                    <div key={genre} className={`${className ? className : "bg-blueNew py-[3px] px-[5px] text-[12px] rounded text-white whitespace-nowrap"}}`}>
                         {genres[genre]?.name}
                     </div>
                 )

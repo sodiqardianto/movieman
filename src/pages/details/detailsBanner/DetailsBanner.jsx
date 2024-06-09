@@ -16,13 +16,10 @@ const DetailsBanner = ({ video, crew }) => {
     const [videoId, setVideoId] = useState(null);
 
     const { url } = useSelector((state) => state.home);
-
     const { mediaType, id } = useParams();
     const { data, loading } = useFetch(`/${mediaType}/${id}`);
-
     const director = crew?.filter((f) => f.job === "Director");
     const writer = crew?.filter((f) => f?.job == "Screenplay" || f?.job == "Story" || f?.job == "Writer");
-
     const _genres = data?.genres?.map(genre => genre.id);
 
     const toHoursAndMinutes = (totalMinutes) => {

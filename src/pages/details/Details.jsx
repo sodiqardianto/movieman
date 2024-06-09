@@ -11,11 +11,11 @@ const Details = () => {
   const { mediaType, id } = useParams();
   const { data, loading } = useFetch(`/${mediaType}/${id}/videos`);
   const { data: credits, loading: creditsLoading } = useFetch(`/${mediaType}/${id}/credits`);
-
-  console.log(data);
+  const officialVideo = data?.results?.find((result) => result?.name?.includes("Official Trailer"));
+  const video = data?.results?.[0];
   return (
     <div>
-      <DetailsBanner video={data?.results?.[0]} crew={credits?.crew} />
+      <DetailsBanner video={officialVideo || video} crew={credits?.crew} />
       <Cast data={credits?.cast} loading={creditsLoading} />
       <VideoSection data={data?.results} loading={loading} />
       <Similar mediaType={mediaType} id={id} />

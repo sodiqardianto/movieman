@@ -19,7 +19,7 @@ const SwitchTabs = ({data, onTabChange}) => {
                 {data.map((tab, index) => (
                     <span
                         key={index}
-                        className={`h-full flex items-center justify-center w-[100px] text-blackOne text-xs relative z-10 cursor-pointer transition-colors duration-300 ${selectedTab === index ? "text-white" : ""}`}
+                        className={`h-full flex items-center justify-center w-[100px] text-blackOne text-sm relative z-10 cursor-pointer transition-colors duration-300 ${selectedTab === index ? "text-white" : ""}`}
                         onClick={() => activeTab(tab, index)}
                     >
                         {tab}

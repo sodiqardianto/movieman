@@ -37,9 +37,12 @@ const MovieCard = ({ data, fromSearch, mediaType }) => {
                     <React.Fragment>
                         <CircleRating
                             rating={data.vote_average.toFixed(1)}
+                            className="w-10 h-10 relative top-[30px] flex-shrink-0 md:w-[50px] md:h-[50px] font-bold"
+                            backgroundColor="white"
                         />
                         <Genres
                             data={data.genre_ids.slice(0, 2)}
+                            className="bg-blueNew py-[3px] px-[5px] text-[12px] rounded text-white whitespace-nowrap hidden relative md:flex md:flex-wrap md:justify-end"
                         />
                     </React.Fragment>
                 )}

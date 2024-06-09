@@ -70,7 +70,7 @@ const Header = () => {
   }
   
   return (
-    <header className={`${show} fixed w-full h-16 z-10 flex items-center transition-all ease-in-out duration-500 ${mobileMenu ? "bg-blackThree" : ""} `}>
+    <header className={`${show} fixed w-full h-16 z-20 flex items-center transition-all ease-in-out duration-500 ${mobileMenu ? "bg-blackThree" : ""} `}>
       <ContentWrapper className="flex items-center justify-between">
         <div className="cursor-pointer">
 

@@ -30,6 +30,8 @@ export default {
         blackTwo: "#041226",
         blackThree: "#020c1b",
         blueNew: "#3985F5",
+        "black-light": "#173d77",
+        "black-lighter": "#1c4b91",
       },
       borderColor: {
         whiteOp10: "1px solid rgba(255, 255, 255, 0.1)",

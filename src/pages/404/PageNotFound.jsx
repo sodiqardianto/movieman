@@ -1,11 +1,15 @@
-import React from 'react'
+import React from "react";
+import ContentWrapper from "../../components/contentWrapper/ContentWrapper";
 
 const PageNotFound = () => {
-  return (
-    <div>
-      Page Not Found
-    </div>
-  )
-}
+    return (
+        <div className="h-[700px] pt-[200px]">
+            <ContentWrapper className="items-center text-black-light flex flex-col">
+                <span className="text-[150px] font-bold">404</span>
+                <span className="text-5xl">Page not found!</span>
+            </ContentWrapper>
+        </div>
+    );
+};
 
-export default PageNotFound
+export default PageNotFound;
